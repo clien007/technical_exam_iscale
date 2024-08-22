@@ -1,10 +1,10 @@
 <?php
 
-namespace Utils;
+namespace App\Utils;
 
-use Utils\DB;
-use Utils\CommentManager;
-use Repository\NewsRepository;
+use App\Utils\DB;
+use App\Utils\CommentManager;
+use App\Repository\NewsRepository;
 
 class NewsManager
 {

@@ -1,9 +1,11 @@
 <?php
+// Load the autoloader
+require_once __DIR__ . '/autoload.php';
 
-require_once(__DIR__ . '/bootstrap.php');
+// Initialize dependencies
+require_once __DIR__ . '/bootstrap.php';
 
-// Run Application
-list($newsManager, $commentManager) = bootstrap();
+list($newsManager, $commentManager) = initializeDependencies();
 
 // List and display all news articles with their comments
 foreach ($newsManager->listNews() as $news) {
@@ -30,7 +32,7 @@ foreach ($newsManager->listNews() as $news) {
 
 // Add Comment
 // try{
-//     $commentManager->addCommentForNews('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales tortor a elit tincidunt feugiat. Pellente',10);
+//     $commentManager->addCommentForNews('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales tortor a elit tincidunt feugiat. Pellente',14);
 //     echo "Comment successfully added";
 // }catch (Exception $e){
 //     echo "Error: " . $e->getMessage() . "\n";

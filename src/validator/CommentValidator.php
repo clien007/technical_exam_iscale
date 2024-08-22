@@ -1,7 +1,7 @@
 <?php
 
-namespace Validator;
-use Utils\DB;
+namespace App\Validator;
+use App\Utils\DB;
 
 class CommentValidator
 {

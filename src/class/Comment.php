@@ -1,9 +1,9 @@
 <?php
 
-namespace Class;
+namespace App\Class;
 
 //Import Interface 
-use Interface\ContentInterface;
+use App\Interface\ContentInterface;
 
 class Comment implements ContentInterface
 {

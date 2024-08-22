@@ -1,10 +1,10 @@
 <?php
 
-namespace Repository;
+namespace App\Repository;
 
-use Factory\CommentFactory;
-use Utils\DB;
-use Validator\CommentValidator;
+use App\Factory\CommentFactory;
+use App\Utils\DB;
+use App\Validator\CommentValidator;
 
 class CommentRepository
 {

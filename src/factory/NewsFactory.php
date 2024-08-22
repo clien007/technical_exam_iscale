@@ -1,8 +1,8 @@
 <?php
 
-namespace Factory;
+namespace App\Factory;
 
-use Class\News; // Ensure to use the fully qualified class name
+use App\Class\News; // Ensure to use the fully qualified class name
 
 class NewsFactory
 {

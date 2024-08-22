@@ -1,34 +1,17 @@
 <?php
+// bootstrap.php
 
-define('ROOT', __DIR__);
+use App\Utils\DB;
+use App\Factory\CommentFactory;
+use App\Factory\NewsFactory;
+use App\Validator\CommentValidator;
+use App\Validator\NewsValidator;
+use App\Repository\CommentRepository;
+use App\Repository\NewsRepository;
+use App\Utils\CommentManager;
+use App\Utils\NewsManager;
 
-// Load all necessary files
-require_once(ROOT . '/interface/ContentInterface.php');
-require_once(ROOT . '/utils/DB.php');
-require_once(ROOT . '/utils/CommentManager.php');
-require_once(ROOT . '/utils/NewsManager.php');
-require_once(ROOT . '/class/Comment.php');
-require_once(ROOT . '/class/News.php');
-require_once(ROOT . '/factory/CommentFactory.php');
-require_once(ROOT . '/factory/NewsFactory.php');
-require_once(ROOT . '/repository/CommentRepository.php');
-require_once(ROOT . '/repository/NewsRepository.php');
-require_once(ROOT . '/validator/CommentValidator.php');
-require_once(ROOT . '/validator/NewsValidator.php');
-
-// Import Namespaced Classes
-use Utils\DB;
-use Utils\CommentManager;
-use Utils\NewsManager;
-use Factory\CommentFactory;
-use Factory\NewsFactory;
-use Repository\CommentRepository;
-use Repository\NewsRepository;
-use Validator\CommentValidator;
-use Validator\NewsValidator;
-
-// Initialize Dependencies
-function bootstrap()
+function initializeDependencies()
 {
     $db = DB::getInstance();
     

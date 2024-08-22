@@ -1,10 +1,10 @@
 <?php
 
-namespace Repository;
+namespace App\Repository;
 
-use Factory\NewsFactory;
-use Utils\DB;
-use Validator\NewsValidator;
+use App\Factory\NewsFactory;
+use App\Utils\DB;
+use App\Validator\NewsValidator;
 
 class NewsRepository
 {

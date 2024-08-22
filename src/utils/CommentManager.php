@@ -1,9 +1,9 @@
 <?php
 
-namespace Utils;
+namespace App\Utils;
 
-use Utils\DB;
-use Repository\CommentRepository;
+use App\Utils\DB;
+use App\Repository\CommentRepository;
 
 class CommentManager
 {

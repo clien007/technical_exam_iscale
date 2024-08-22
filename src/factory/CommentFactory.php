@@ -1,8 +1,8 @@
 <?php
 
-namespace Factory;
+namespace App\Factory;
 
-use Class\Comment; // Ensure correct namespace for the Comment class
+use App\Class\Comment; // Ensure correct namespace for the Comment class
 
 class CommentFactory
 {
