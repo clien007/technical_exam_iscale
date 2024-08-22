@@ -1,6 +1,6 @@
-### Bad Practice ###
+## Bad Practice ##
 
-  ## Singleton Pattern Misuse
+  ### Singleton Pattern Misuse
       private static $instance = null;
       private function __construct() { ... }
       public static function getInstance() { ... }
@@ -10,7 +10,7 @@
     Tight Coupling: Singleton instances are tightly coupled to the global state, making it challenging to manage multiple instances or mock them in tests.<br>
     Constructor Visibility: The private constructor is often used to enforce the Singleton pattern, but it can make dependency injection and testing more difficult.
 
-  ## Direct SQL Queries with String Concatenation
+  ### Direct SQL Queries with String Concatenation
       $sql = "INSERT INTO `comment` (`body`, `created_at`, `news_id`) VALUES('". $body . "','" . date('Y-m-d') . "','" . $newsId . "')";
       $db->exec($sql);
 
@@ -18,7 +18,7 @@
     SQL Injection: Directly concatenating user inputs into SQL queries is vulnerable to SQL injection attacks. Prepared statements should be used to prevent this.<br>
     Security: Using prepared statements with bound parameters is a safer practice that ensures user inputs are properly escaped and sanitized.
 
-  ## Lack of Input Validation and Sanitization
+  ### Lack of Input Validation and Sanitization
       public function addCommentForNews($body, $newsId) { ... }
       public function addNews($title, $body) { ... }
 
@@ -26,7 +26,7 @@
     Security Risks: The code does not validate or sanitize inputs, which can lead to security vulnerabilities such as SQL injection, XSS (Cross-Site Scripting), and data corruption.<br>
     Data Integrity: Without validation, invalid or unexpected data might be inserted into the database, affecting data integrity.
 
-  ## Static Method Calls for Singleton Instances
+  ### Static Method Calls for Singleton Instances
       CommentManager::getInstance()->listComments();
       NewsManager::getInstance()->listNews();
 
@@ -35,39 +35,39 @@
     Dependency Management: It becomes challenging to manage dependencies and mock objects when using static methods for singleton instances.
 
 
-#### IMPROVEMENTS ###
+## IMPROVEMENTS ##
 
-## Factory Design Pattern: 
+### Factory Design Pattern: 
   The FactoryInterface defines a contract for creating objects. The CommentFactory and NewsFactory classes implement this interface, each responsible for creating an instance of Comment and News, respectively.
 
-## Repository Design Pattern
+### Repository Design Pattern
   Which handles the database queries<br>
   The purpose of a repository is to provide a centralized and abstracted layer for managing data access and persistence operations, allowing the rest of the application to interact with the data source through a simplified and consistent API.
 
-## SOLID Principles:
+### SOLID Principles:
   SRP: Each class has a single responsibility.<br>
   OCP: The classes are open for extension but closed for modification. We can extend Comment and News if necessary without modifying the base class.<br>
   LSP: Although we don't use inheritance here, our classes are designed so that if we did, any derived class could replace the base class without breaking the code.<br>
   ISP: We're using specific interfaces (FactoryInterface).<br>
   DIP: The CommentFactory and NewsFactory depend on an abstraction (FactoryInterface) rather than a concrete class.
 
-## Implement autoload
+### Implement autoload
   This reduces the amount of boilerplate code you need to write and maintain.<br>
   If you ever move or rename a class file, the autoloader will handle the change seamlessly as long as you follow consistent naming conventions.
 
-## Use of Namespaces: 
+### Use of Namespaces: 
   Ensure the code is properly namespaced.
 
-## Dependency Injection: 
+### Dependency Injection: 
   Inject dependencies where needed.
 
-## Proper File Organization: 
+### Proper File Organization: 
   Ensure that files are organized properly and included as needed.
 
-## Error Handling: 
+### Error Handling: 
   Handle potential errors gracefully.
 
-## Sanitization and Validation
+### Sanitization and Validation
   Title Validation (News):<br>
     Ensures that the title is not empty and does not exceed 255 characters. This is important to prevent empty titles and overly long titles that could break the UI or cause other issues.<br>
 
