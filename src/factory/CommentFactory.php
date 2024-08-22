@@ -2,7 +2,7 @@
 
 namespace App\Factory;
 
-use App\Class\Comment; // Ensure correct namespace for the Comment class
+use App\Model\Comment; // Ensure correct namespace for the Comment class
 
 class CommentFactory
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Class;
+namespace App\Model;
 
 //Import Interface 
 use App\Interface\ContentInterface;

@@ -2,7 +2,7 @@
 
 namespace App\Factory;
 
-use App\Class\News; // Ensure to use the fully qualified class name
+use App\Model\News; // Ensure to use the fully qualified class name
 
 class NewsFactory
 {
