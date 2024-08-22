@@ -18,10 +18,6 @@
     SQL Injection: Directly concatenating user inputs into SQL queries is vulnerable to SQL injection attacks. Prepared statements should be used to prevent this.<br>
     Security: Using prepared statements with bound parameters is a safer practice that ensures user inputs are properly escaped and sanitized.
 
-  ### Using Class Folder Name
-    Class: The term "Class" is too generic and doesn't provide context about what the folder contains.<br>
-    Everything in object-oriented programming is technically a class, so using "Class" as a folder name doesn't convey meaningful information about its purpose.
-
   ### Lack of Input Validation and Sanitization
       public function addCommentForNews($body, $newsId) { ... }
       public function addNews($title, $body) { ... }
@@ -37,6 +33,10 @@
   Explanation:<br>
     Global State: Relying on static methods for singletons introduces a global state, which makes code harder to test and maintain.<br>
     Dependency Management: It becomes challenging to manage dependencies and mock objects when using static methods for singleton instances.
+
+  ### Using Class Folder Name
+  Class: The term "Class" is too generic and doesn't provide context about what the folder contains. <br>
+  Everything in object-oriented programming is technically a class, so using "Class" as a folder name doesn't convey meaningful information about its purpose.
 
 
 ## IMPROVEMENTS ##
