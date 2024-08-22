@@ -1,9 +1,16 @@
 <?php
 
 namespace Validator;
+use Utils\DB;
 
 class CommentValidator
 {
+
+    public function __construct(DB $db)
+    {
+        $this->db = $db;
+    }
+
     /**
      * Validates the body of a comment and its associated news ID.
      *
@@ -16,6 +23,7 @@ class CommentValidator
     {
         $this->validateBody($body);
         $this->validateNewsId($newsId);
+        $this->newsIdExists($newsId);
     }
 
     /**
@@ -45,4 +53,23 @@ class CommentValidator
             throw new \InvalidArgumentException('News ID must be a positive integer.');
         }
     }
+
+    /**
+     * Validates the news ID if exists in Database.
+     *
+     * @param int $newsId
+     * @return void
+     * @throws \InvalidArgumentException
+     */
+
+     private function newsIdExists(int $newsId): void
+     {
+         $sql = "SELECT COUNT(*) FROM `news` WHERE `id` = :news_id";
+         $params = ['news_id' => $newsId];
+         $count = $this->db->select($sql, $params);
+
+        if($count[0]['COUNT(*)'] <= 0){
+            throw new \InvalidArgumentException("Invalid News ID: $newsId");
+        }
+     }
 }
