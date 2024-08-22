@@ -63,6 +63,7 @@ foreach ($newsManager->listNews() as $news) {
     }
 }
 
+// Add News and Comment
 // try{
 //     $newsID = $newsManager->addNews('News 6','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales tortor a elit tincidunt feugiat. Pellentesque a nisl dui. Fusce fringilla, libero et tristique rhoncus, justo neque fermentum lacus, sit amet placerat leo lectus et lectus. Nulla in pulvinar libero. Cras consequat varius arcu fermentum vulputate. Cras sem ante, varius rutrum suscipit ut, tempus sed elit. Donec condimentum consequat vehicula.');
 //     $commentManager->addCommentForNews('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales tortor a elit tincidunt feugiat. Pellente',$newsID);
