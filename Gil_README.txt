@@ -43,16 +43,16 @@ Explanation:
 ## Factory Design Pattern: 
     The FactoryInterface defines a contract for creating objects. The CommentFactory and NewsFactory classes implement this interface, each responsible for creating an instance of Comment and News, respectively.
 
+## Repository Design Pattern
+    Which handles the database queries
+    The purpose of a repository is to provide a centralized and abstracted layer for managing data access and persistence operations, allowing the rest of the application to interact with the data source through a simplified and consistent API.
+
 ## SOLID Principles:
     SRP: Each class has a single responsibility.
     OCP: The classes are open for extension but closed for modification. We can extend Comment and News if necessary without modifying the base class.
     LSP: Although we don't use inheritance here, our classes are designed so that if we did, any derived class could replace the base class without breaking the code.
     ISP: We're using specific interfaces (FactoryInterface).
     DIP: The CommentFactory and NewsFactory depend on an abstraction (FactoryInterface) rather than a concrete class.
-
-## Implement Repository
-    Which handles the database queries
-    The purpose of a repository is to provide a centralized and abstracted layer for managing data access and persistence operations, allowing the rest of the application to interact with the data source through a simplified and consistent API.
 
 ## Use of Namespaces: 
     Ensure the code is properly namespaced.
