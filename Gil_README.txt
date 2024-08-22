@@ -54,6 +54,10 @@ Explanation:
     ISP: We're using specific interfaces (FactoryInterface).
     DIP: The CommentFactory and NewsFactory depend on an abstraction (FactoryInterface) rather than a concrete class.
 
+## Implement autoload
+    This reduces the amount of boilerplate code you need to write and maintain.
+    If you ever move or rename a class file, the autoloader will handle the change seamlessly as long as you follow consistent naming conventions.
+
 ## Use of Namespaces: 
     Ensure the code is properly namespaced.
 
