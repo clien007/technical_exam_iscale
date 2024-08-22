@@ -70,19 +70,19 @@
 ## Sanitization and Validation
   Title Validation (News):<br>
     Ensures that the title is not empty and does not exceed 255 characters. This is important to prevent empty titles and overly long titles that could break the UI or cause other issues.<br>
-  <br>  
+
   Body Validation (News & Comment): <br>
     Ensures that the body is not empty. This is crucial to ensure that all news items have meaningful content.<br>
-  <br>  
+ 
   News ID Validation:<br>
     The newsIdExists method queries the news table to check if the newsId exists. It returns a boolean value indicating whether the newsId is valid or not.<br>
     If newsId does not exist, an InvalidArgumentException is thrown, indicating the error.<br>
-  <br>  
+ 
   Exception Handling:<br>
       Throws \InvalidArgumentException if the validation fails. This provides clear feedback about what went wrong, which can be useful for debugging and improving user experience.<br>
-  <br>  
+
   Sanitization:<br>
     The htmlspecialchars function is used to convert special characters to HTML entities, which helps prevent XSS attacks by escaping potentially harmful characters.<br>
-  <br>  
+
   Parameterized Queries:<br>
     Uses parameterized queries to prevent SQL injection, ensuring that user inputs are safely handled.<br>
