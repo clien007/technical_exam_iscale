@@ -11,6 +11,14 @@ use App\Repository\NewsRepository;
 use App\Utils\CommentManager;
 use App\Utils\NewsManager;
 
+/**
+ * Initialize Dependencies
+ *
+ * Sets up the necessary dependencies for the application.
+ *
+ * @return array An array containing instances of NewsManager and CommentManager.
+ */
+
 function initializeDependencies()
 {
     $db = DB::getInstance();

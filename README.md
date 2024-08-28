@@ -42,7 +42,7 @@
 ## IMPROVEMENTS ##
 
 ### Factory Design Pattern: 
-  The FactoryInterface defines a contract for creating objects. The CommentFactory and NewsFactory classes implement this interface, each responsible for creating an instance of Comment and News, respectively.
+  The CommentFactory and NewsFactory classes implement this interface, each responsible for creating an instance of Comment and News, respectively.
 
 ### Repository Design Pattern
   Which handles the database queries<br>
@@ -52,8 +52,8 @@
   SRP: Each class has a single responsibility.<br>
   OCP: The classes are open for extension but closed for modification. We can extend Comment and News if necessary without modifying the base class.<br>
   LSP: Although we don't use inheritance here, our classes are designed so that if we did, any derived class could replace the base class without breaking the code.<br>
-  ISP: We're using specific interfaces (FactoryInterface).<br>
-  DIP: The CommentFactory and NewsFactory depend on an abstraction (FactoryInterface) rather than a concrete class.
+  ISP: We're using specific interfaces.<br>
+  DIP: The CommentFactory and NewsFactory depend on an abstraction rather than a concrete class.
 
 ### Implement autoload
   This reduces the amount of boilerplate code you need to write and maintain.<br>
